@@ -1,0 +1,22 @@
+zip -r name.zip whattozip
+
+
+
+
+appRegistration=$(az ad app create --display-name "pwshbot222" --end-date "2099-12-31T23:59:59Z")
+clientID=$(echo $appRegistration | jq -r '.appId')
+appRegistrationSecret=$(az ad app credential reset --id $clientID)
+clientSecret=$(echo $appRegistrationSecret | jq -r '.password')
+resourceGroupName="testbotrg222"
+az group create --name $resourceGroupName --location eastus
+resourceBaseName="pwshbot222"
+webAppSKU="B1"
+botDisplayName="pwshbot222"
+templateFilePath="infrastructure/azure.bicep"
+
+
+
+az deployment group create --resource-group $resourceGroupName --template-file $templateFilePath --parameters resourceBaseName=$resourceBaseName botAadAppClientId=$clientID botAadAppClientSecret=$clientSecret webAppSKU=$webAppSKU botDisplayName=$botDisplayName
+az webapp deployment source config-zip --resource-group $resourceGroupName --name $resourceBaseName --src src.zip
+
+clear
