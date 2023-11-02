@@ -30,3 +30,10 @@ az deployment group create --resource-group $resourceGroupName --template-file $
 # Deploy Code
 
 az webapp deployment source config-zip --resource-group $resourceGroupName --name $resourceBaseName --src app.zip
+
+
+# To test the bot
+
+Navigate to Azude Bot Service that was created in the resource group
+
+select channels and click open in teams using the link to the right of the teams channel icon
