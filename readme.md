@@ -1,7 +1,7 @@
 # Deploy Infrastructure - Execute in the infrastructure folder
 
 ## Create an Azure AD app registration
-appRegistration=$(az ad app create --display-name "pwshbot" --end-date "2099-12-31T23:59:59Z")
+appRegistration=$(az ad app create --display-name "NAME OF APP REG" --end-date "2099-12-31T23:59:59Z")
 
 ### Set clientID Variable
 clientID=$(echo $appRegistration | jq -r '.appId')
