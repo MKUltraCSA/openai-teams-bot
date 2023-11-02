@@ -36,4 +36,4 @@ az webapp deployment source config-zip --resource-group $resourceGroupName --nam
 
 Navigate to Azude Bot Service that was created in the resource group
 
-select channels and click open in teams using the link to the right of the teams channel icon
+select channels and click open in teams using the link in the Actions colum of the teams channel
