@@ -29,4 +29,4 @@ az deployment group create --resource-group $resourceGroupName --template-file $
 
 # Deploy Code
 
-az webapp deployment source config-zip --resource-group $resourceGroupName --name $resourceBaseName --src src.zip
+az webapp deployment source config-zip --resource-group $resourceGroupName --name $resourceBaseName --src app.zip
